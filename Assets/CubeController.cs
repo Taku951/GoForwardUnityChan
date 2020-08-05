@@ -32,14 +32,14 @@ public class CubeController : MonoBehaviour {
     {
 
         // ブロック＆地面に衝突した場合（追加）
-        if (collision.gameObject.name == "ground" || collision.gameObject.name == "CubePrefab(Clone)")
+        if (collision.gameObject.tag == "ground" || collision.gameObject.tag == "Block")
         {
             GetComponent<AudioSource>().Play();
         }
         // ユニティに当たった場合
-        else if (collision.gameObject.name == "UnityChan2D")
+        else if (collision.gameObject.tag == "UnityChan2D")
         {
-            GetComponent<AudioSource>().Stop();
+            GetComponent<AudioSource>().volume = 0;
         }
     }
 }
